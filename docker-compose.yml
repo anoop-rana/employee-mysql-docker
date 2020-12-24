@@ -1,0 +1,25 @@
+version: "3"
+services:
+  employee-service:
+    container_name: employee-service
+    image: employee-service
+    ports:
+      - "9090:9090"
+    networks:
+      - emp-mysql-network
+    depends_on:
+      - empsql
+
+  empsql:
+    container_name: empsql
+    image: mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - emp-mysql-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=empdb
+
+networks:
+  emp-mysql-network:
