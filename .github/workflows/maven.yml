@@ -28,4 +28,4 @@ jobs:
           push: true
           tags: anooprana45/employee_mysql:latest
           secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.DOCKER_EMP_TOKEN_KEY }}
+            DOCKER_EMP_TOKEN_KEY=${{ secrets.DOCKER_EMP_TOKEN_KEY }}
